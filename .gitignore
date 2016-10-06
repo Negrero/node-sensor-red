@@ -23,3 +23,5 @@ nodes/core/locales/zz-ZZ
 .idea/modules.xml
 .idea/node-red.iml
 .idea/workspace.xml
+lib/
+test/red/runtime/nodes/resources/local/TestNodeModule/
