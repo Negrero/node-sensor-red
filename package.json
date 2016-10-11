@@ -59,8 +59,8 @@
         "node-red-node-email":"0.1.*",
         "node-red-node-twitter":"0.1.*",
         "node-red-node-rbe":"0.1.*",
-        "node-red-contrib-multiproject":"0.0.2-14",
-        "node-red-storage-multiproject":"0.0.1-5"
+        "node-red-contrib-multiproject":"negrero/node-red-contrib-multiproject",
+        "node-red-storage-multiproject":"negrero/node-red-storage-multiproject"
     },
     "optionalDependencies": {
         "node-red-node-serialport":"0.2.*",

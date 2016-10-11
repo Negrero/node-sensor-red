@@ -5,6 +5,7 @@ var when = require("when");
 var RED = require("./red/red.js");
 var http = require("http");
 var users_authenticate={};
+
 module.exports = {
     type: "credentials",
 
@@ -58,21 +59,26 @@ module.exports = {
                     if (userNodeSensor) {
                         if (!userNodeSensor.error) {
                             if(userNodeSensor.roles){
-                                switch (userNodeSensor.roles[0]) {
-                                    case "admin":
-                                        typepermission = {username: userNodeSensor.email, permissions: "*"};
-                                        break;
-                                    case "operator":
-                                        typepermission = {username: userNodeSensor.email, permissions: "read"};
-                                        break;
-                                    case "root":
-                                        typepermission = {username: userNodeSensor.email, permissions: "*"};
-                                        break;
-                                    default:
-                                        typepermission = {username: userNodeSensor.email, permissions: "read"};
-                                        break;
+                                if(userNodeSensor.roles.length>0){
+                                    switch (userNodeSensor.roles[0].name) {
+                                        case "admin":
+                                            typepermission = {username: userNodeSensor.email, permissions: "*"};
+                                            break;
+                                        case "operator":
+                                            typepermission = {username: userNodeSensor.email, permissions: "read"};
+                                            break;
+                                        case "root":
+                                            typepermission = {username: userNodeSensor.email, permissions: "*"};
+                                            break;
+                                        default:
+                                            typepermission = {username: userNodeSensor.email, permissions: "read"};
+                                            break;
+                                    }
+
+                                }else{
+                                    typepermission = {username: userNodeSensor.email, permissions: "read"};
                                 }
-                                typepermission.customerId=userNodeSensor.id
+                                typepermission.customerId=userNodeSensor.id;
                                 users_authenticate[userNodeSensor.email] = userNodeSensor;
                                 users_authenticate[userNodeSensor.email].permissions = typepermission;
                                 var now = new Date();
@@ -100,7 +106,6 @@ module.exports = {
             if(this.users_authenticate[property].session.expired<new Date())
                 delete this.users_authenticate[property]
         }
-
     },
     default: function() {
         return when.promise(function(resolve) {
