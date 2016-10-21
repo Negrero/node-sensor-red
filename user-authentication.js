@@ -8,7 +8,6 @@ var users_authenticate={};
 
 module.exports = {
     type: "credentials",
-
     users: function(username) {
         return when.promise(function(resolve) {
             // Do whatever work is needed to check username is a valid
