@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Copyright 2013, 2016 IBM Corp.
+ * Copyright 2013, 2016 Thingtrack sl.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,19 @@ var http = require('http');
 var https = require('https');
 var util = require("util");
 var express = require("express");
+var RED = require("node-red");
+/*
 var crypto = require("crypto");
 try { bcrypt = require('bcrypt'); }
 catch(e) { bcrypt = require('bcryptjs'); }
 var nopt = require("nopt");
 var path = require("path");
 var fs = require("fs-extra");
-var RED = require("./red/red.js");
+*/
 
 var server;
 var app = express();
-
+/*
 var settingsFile;
 var flowFile;
 
@@ -115,10 +117,26 @@ try {
     }
     process.exit();
 }
-
-if (parsedArgs.v) {
-    settings.verbose = true;
+*/
+try {
+    var settingsFile=__dirname+'/settings.js'
+    var settings = require(settingsFile);
+    settings.settingsFile = settingsFile;
+} catch(err) {
+    console.log("Error loading settings file: "+settingsFile)
+    if (err.code == 'MODULE_NOT_FOUND') {
+        if (err.toString().indexOf(settingsFile) === -1) {
+            console.log(err.toString());
+        }
+    } else {
+        console.log(err);
+    }
+    process.exit();
 }
+settings.verbose = true;
+//if (parsedArgs.v) {
+//    settings.verbose = true;
+//}
 
 if (settings.https) {
     server = https.createServer(settings.https,function(req,res){app(req,res);});
@@ -157,16 +175,19 @@ if (settings.httpNodeRoot !== false) {
     settings.httpNodeAuth = settings.httpNodeAuth || settings.httpAuth;
 }
 
-settings.uiPort = parsedArgs.port||settings.uiPort||1880;
+//settings.uiPort = parsedArgs.port||settings.uiPort||1880;
+settings.uiPort = settings.uiPort||1880;
 settings.uiHost = settings.uiHost||"0.0.0.0";
-
+/*
 if (flowFile) {
     settings.flowFile = flowFile;
 }
+*/
+/*
 if (parsedArgs.userDir) {
     settings.userDir = parsedArgs.userDir;
 }
-
+*/
 try {
     RED.init(server,settings);
 } catch(err) {

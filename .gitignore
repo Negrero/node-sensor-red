@@ -1,27 +1,6 @@
-.DS_store
-.config.json
-.dist
-.jshintignore
-.npm
-.project
-.sessions.json
-.settings
-.tern-project
-.idea
-*.backup
-*_cred*
-coverage
-credentials.json
-flows*.json
-nodes/node-red-nodes/
+# Created by .ignore support plugin (hsz.mobi)
 node_modules
-public
-locales/zz-ZZ
-nodes/core/locales/zz-ZZ
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/node-red.iml
-.idea/workspace.xml
-lib/
-test/red/runtime/nodes/resources/local/TestNodeModule/
+.gitignore
+.idea/
+Would skip repository node_modules/node-red-dashboard
+public/

@@ -80,7 +80,7 @@ module.exports = {
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    //httpStatic: '/home/nol/node-red-static/',
+    httpStatic: './public',
 
     // If you installed the optional node-red-dashboard you can set it's path 
     // relative to httpRoot
@@ -163,6 +163,7 @@ module.exports = {
         // octalbonescript:require('octalbonescript'),
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
+        loopback:require("node-sensor-red-loopback")
     },
 
     // The following property can be used to order the categories in the editor

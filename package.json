@@ -1,12 +1,12 @@
 {
-  "name": "node-red",
-  "version": "0.14.6",
-  "description": "A visual tool for wiring the Internet of Things",
+  "name": "node-sensor-red",
+  "version": "0.0.1",
+  "description": "A visual tool for wiring the Internet of Things adapter for node-sensor",
   "homepage": "http://nodered.org",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/node-red/node-red.git"
+    "url": "https://github.com/thingtrack/node-sensor-red.git"
   },
   "main": "red/red.js",
   "scripts": {
@@ -19,10 +19,10 @@
   },
   "contributors": [
     {
-      "name": "Nick O'Leary"
+      "name": "Andres Carmona Gil"
     },
     {
-      "name": "Dave Conway-Jones"
+      "name": "Miguel Angel "
     }
   ],
   "keywords": [
@@ -33,43 +33,11 @@
     "flow"
   ],
   "dependencies": {
-    "basic-auth": "1.0.4",
-    "bcryptjs": "2.3.0",
-    "body-parser": "1.15.2",
-    "cheerio": "0.19.0",
-    "clone": "1.0.2",
-    "cookie-parser": "1.4.3",
-    "cors": "2.7.1",
-    "cron": "1.1.0",
-    "express": "4.14.0",
-    "follow-redirects": "0.2.0",
-    "fs-extra": "0.30.0",
-    "fs.notify": "0.0.4",
-    "i18next": "1.10.6",
-    "is-utf8": "0.2.1",
-    "media-typer": "0.3.0",
-    "mqtt": "1.13.0",
-    "mustache": "2.2.1",
+    "node-sensor-red-loopback":"thingtrack/node-sensor-red-loopback",
     "node-red-contrib-multiproject": "negrero/node-red-contrib-multiproject",
-    "node-red-dashboard": "^2.1.0",
-    "node-red-node-email": "0.1.*",
-    "node-red-node-feedparser": "0.1.*",
-    "node-red-node-rbe": "0.1.*",
-    "node-red-node-twitter": "0.1.*",
     "node-red-storage-multiproject": "negrero/node-red-storage-multiproject",
-    "nopt": "3.0.6",
-    "oauth2orize": "1.4.0",
-    "on-headers": "1.0.1",
-    "passport": "0.3.2",
-    "passport-http-bearer": "1.0.1",
-    "passport-oauth2-client-password": "0.1.2",
-    "raw-body": "2.1.7",
-    "semver": "5.3.0",
-    "sentiment": "1.0.6",
-    "uglify-js": "2.7.0",
-    "when": "3.7.7",
-    "ws": "0.8.1",
-    "xml2js": "0.4.17"
+    "express": "4.14.0",
+    "node-red":"0.15.1"
   },
   "optionalDependencies": {
     "node-red-node-serialport": "0.2.*",
