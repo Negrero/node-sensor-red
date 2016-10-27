@@ -33,11 +33,13 @@
     "flow"
   ],
   "dependencies": {
-    "node-sensor-red-loopback":"thingtrack/node-sensor-red-loopback",
+    "express": "4.14.0",
+    "fs-extra": "0.30.0",
+    "node-red": "0.15.1",
     "node-red-contrib-multiproject": "negrero/node-red-contrib-multiproject",
     "node-red-storage-multiproject": "negrero/node-red-storage-multiproject",
-    "express": "4.14.0",
-    "node-red":"0.15.1"
+    "node-sensor-red-loopback": "thingtrack/node-sensor-red-loopback",
+    "when": "3.7.7"
   },
   "optionalDependencies": {
     "node-red-node-serialport": "0.2.*",

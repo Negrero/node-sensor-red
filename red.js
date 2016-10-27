@@ -25,9 +25,8 @@ try { bcrypt = require('bcrypt'); }
 catch(e) { bcrypt = require('bcryptjs'); }
 var nopt = require("nopt");
 var path = require("path");
-var fs = require("fs-extra");
 */
-
+var fs = require("fs-extra");
 var server;
 var app = express();
 /*

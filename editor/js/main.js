@@ -228,7 +228,7 @@ var RED = (function() {
         $("#main-container").show();
         $(".header-toolbar").show();
 
-        loadNodeList();
+        //loadNodeList();
     }
 
     $(function() {

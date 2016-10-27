@@ -17,7 +17,7 @@
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
 //var fs = require("fs");
-
+var path_editor=__dirname+'/public'
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
@@ -75,12 +75,12 @@ module.exports = {
 
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
-    //httpRoot: '/red',
+    //httpRoot: '/',
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    httpStatic: './public',
+    //httpStatic: path_editor,
 
     // If you installed the optional node-red-dashboard you can set it's path 
     // relative to httpRoot
@@ -120,7 +120,7 @@ module.exports = {
     // The following property can be used to disable the editor. The admin API
     // is not affected by this option. To disable both the editor and the admin
     // API, use either the httpRoot or httpAdminRoot properties
-    //disableEditor: false,
+    disableEditor: false,
 
     // The following property can be used to configure cross-origin resource sharing
     // in the HTTP nodes.
@@ -197,5 +197,41 @@ module.exports = {
         bd:"nodesensor",
         user:"nodesensor",
         password:"nodesensor"
+    },
+
+    editorTheme: {
+        page: {
+            title: "Node-RED",
+            favicon: "/absolute/path/to/theme/icon",
+            css: "/absolute/path/to/custom/css/file"
+        },
+        header: {
+            title: "Node-RED",
+            image: "/absolute/path/to/header/image", // or null to remove image
+            url: "http://nodered.org" // optional url to make the header text/image a link to this url
+        },
+
+        deployButton: {
+            type:"simple",
+            label:"Save",
+            icon: "/absolute/path/to/deploy/button/image" // or null to remove image
+        },
+
+        menu: { // Hide unwanted menu items by id. see editor/js/main.js:loadEditor for complete list
+            "menu-item-import-library": false,
+            "menu-item-export-library": false,
+            "menu-item-keyboard-shortcuts": false,
+            "menu-item-help": {
+                label: "Alternative Help Link Text",
+                url: "http://example.com"
+            }
+        },
+
+        userMenu: false, // Hide the user-menu even if adminAuth is enabled
+
+        login: {
+            image: "/absolute/path/to/login/page/big/image" // a 256x256 image
+        }
     }
+
 }

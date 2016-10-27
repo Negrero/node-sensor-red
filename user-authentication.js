@@ -1,5 +1,5 @@
 /**
- * Created by negrero on 29/09/2016.
+ * Created by Andres Carmona Gil on 29/09/2016.
  */
 var when = require("when");
 //var RED = require("./red/red.js");
@@ -61,12 +61,13 @@ module.exports = {
             });
             req.on('error', function (e) {
                 console.log(e)
+                console.log("node sensor connect lose!!! connect direct of loopback in node-red")
                 // one parameter is null because loopback not init express and not pass context(ctx)
                 loopback.models.Customer.usersNodeRed(null,postData,function(err, userNodeSensor){
                     if(err){
                         resolve(null)
                     }else{
-                        resolve(resolveTypePermission(userNodeSensor))
+                        resolve(resolveTypePermission(userNodeSensor.__data))
                     }
 
                 })
