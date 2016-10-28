@@ -190,6 +190,7 @@ module.exports = {
             audit: false
         }
     },
+
     storageModule:require('node-red-storage-multiproject'),
     mongodbMultiproject:{
         port:27017,
@@ -198,15 +199,15 @@ module.exports = {
         user:"nodesensor",
         password:"nodesensor"
     },
-
+/*
     editorTheme: {
         page: {
-            title: "Node-RED",
+            title: "Thingtrack sl",
             favicon: "/absolute/path/to/theme/icon",
             css: "/absolute/path/to/custom/css/file"
         },
         header: {
-            title: "Node-RED",
+            title: "Thingtrack sl",
             image: "/absolute/path/to/header/image", // or null to remove image
             url: "http://nodered.org" // optional url to make the header text/image a link to this url
         },
@@ -233,5 +234,6 @@ module.exports = {
             image: "/absolute/path/to/login/page/big/image" // a 256x256 image
         }
     }
+    */
 
 }

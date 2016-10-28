@@ -30,7 +30,7 @@ module.exports = {
         return when.promise(function (resolve) {
             // Do whatever work is needed to validate the username/password
             // combination.
-            loopback
+
             var postData = JSON.stringify({
                 'email': username,
                 'password': password
