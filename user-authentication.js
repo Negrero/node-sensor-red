@@ -30,51 +30,19 @@ module.exports = {
         return when.promise(function (resolve) {
             // Do whatever work is needed to validate the username/password
             // combination.
+            var postData={
+                email:username,
+                password:password
+            }
+            loopback.models.Customer.usersNodeRed(null,postData,function(err, userNodeSensor){
+                if(err){
+                    console.log(err);
+                    resolve(null)
+                }else{
+                    (userNodeSensor)?resolve(resolveTypePermission(userNodeSensor.__data)):resolve(null);
 
-            var postData = JSON.stringify({
-                'email': username,
-                'password': password
-            });
-            var options = {
-                hostname: 'localhost',
-                port: 4000,
-                path: '/api/Customers/usersNodeRed',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json; charset=utf-8',
-                    'Content-Length': Buffer.byteLength(postData),
-                    'Accept': 'application/json',
-                    'Accept-Encoding': 'gzip,deflate,sdch',
-                    'Accept-Language': 'en-US,en;q=0.8'
                 }
-            };
-            var req = http.request(options, function (res) {
-                var userNodeSensor = false;
-                res.setEncoding('utf8');
-                res.on('data', function (chunk) {
-                    userNodeSensor = JSON.parse(chunk);
-                });
-                res.on('end', function () {
-
-                    resolve(resolveTypePermission(userNodeSensor))
-                });
             });
-            req.on('error', function (e) {
-                console.log(e)
-                console.log("node sensor connect lose!!! connect direct of loopback in node-red")
-                // one parameter is null because loopback not init express and not pass context(ctx)
-                loopback.models.Customer.usersNodeRed(null,postData,function(err, userNodeSensor){
-                    if(err){
-                        resolve(null)
-                    }else{
-                        resolve(resolveTypePermission(userNodeSensor.__data))
-                    }
-
-                })
-
-            });
-            req.write(postData);
-            req.end();
             function resolveTypePermission(userNodeSensor){
                 var typepermission = null
                 if (userNodeSensor) {

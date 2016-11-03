@@ -17,6 +17,7 @@
 var http = require('http');
 var https = require('https');
 var util = require("util");
+var path = require("path");
 var express = require("express");
 var RED = require("node-red");
 /*
@@ -118,7 +119,7 @@ try {
 }
 */
 try {
-    var settingsFile=__dirname+'/settings.js'
+    var settingsFile=path.resolve(__dirname,'settings.js')
     var settings = require(settingsFile);
     settings.settingsFile = settingsFile;
 } catch(err) {
