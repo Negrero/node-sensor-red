@@ -193,8 +193,8 @@ module.exports = {
 
     storageModule:require('node-red-storage-multiproject'),
     mongodbMultiproject:{
-        port:27017,
-        host:(process.NODE_ENV==="development")?"localhost":"localhost",
+        port: 10708,
+        host: "aws-us-east-1-portal.21.dblayer.com",
         bd:"nodesensor",
         user:"nodesensor",
         password:"nodesensor"
