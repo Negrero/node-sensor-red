@@ -195,9 +195,9 @@ module.exports = {
     mongodbMultiproject:{
         port:27017,
         host:(process.NODE_ENV==="development")?"localhost":"",
-        bd:"nodesensor",
-        user:"nodesensor",
-        password:"nodesensor"
+        bd:"rockrail",
+        user:"rockrail",
+        password:"rockrail"
     },
 /*
     editorTheme: {
@@ -226,14 +226,15 @@ module.exports = {
                 label: "Alternative Help Link Text",
                 url: "http://example.com"
             }
+
         },
 
-        userMenu: false, // Hide the user-menu even if adminAuth is enabled
+        //userMenu: true, // Hide the user-menu even if adminAuth is enabled
 
-        login: {
-            image: "/absolute/path/to/login/page/big/image" // a 256x256 image
-        }
+        //login: {
+        //    image: "/absolute/path/to/login/page/big/image" // a 256x256 image
+        //}
     }
-    */
+*/
 
 }

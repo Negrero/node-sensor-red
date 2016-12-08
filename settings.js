@@ -201,7 +201,7 @@ module.exports = {
         user:"nodesensor",
         password:"nodesensor"
     },
-/*
+
     editorTheme: {
         page: {
             title: "Thingtrack sl",
@@ -216,7 +216,7 @@ module.exports = {
 
         deployButton: {
             type:"simple",
-            label:"Save",
+            label:"Lanzar/Grabar",
             icon: "/absolute/path/to/deploy/button/image" // or null to remove image
         },
 
@@ -236,6 +236,6 @@ module.exports = {
             image: "/absolute/path/to/login/page/big/image" // a 256x256 image
         }
     }
-    */
+
 
 }

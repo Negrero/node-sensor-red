@@ -119,11 +119,12 @@ try {
 }
 */
 try {
-    if(process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development'){
-        var settingsFile=path.resolve(__dirname,'settings-development.js')
-    }else{
+    if(process.env.NODE_ENV !== undefined || process.env.NODE_ENV === 'production'){
         var settingsFile=path.resolve(__dirname,'settings.js')
+    }else{
+        var settingsFile=path.resolve(__dirname,'settings-development.js')
     }
+
     var settings = require(settingsFile);
     settings.settingsFile = settingsFile;
 } catch(err) {
