@@ -4,7 +4,7 @@ Se ha llevado a cabo la adaptación de node-red para ejecutar node-sensor-red-lo
 Hemos adaptado el archivo ejecutable de node-red red.js ya que este fichero acepta parametros los cuales nosotros no usaremos ya que tenemos el archivo settings.js directamente en el directorio de trabajo. 
 El resto del fichero se ha dejado intacto solo se ha comentado las lineas que hace referencia a la carga de argumentos, de esta manera tendremos toda la comprobacion del fichero de settings.js.
 ## Dependencias
-- node-red 0.15.1
+- node-red 0.14.6
 - express 4.14.0
 - node-sensor-red-loopback 0.0.1
 ## Arbol de directorios
