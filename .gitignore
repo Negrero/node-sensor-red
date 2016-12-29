@@ -4,3 +4,4 @@ node_modules
 .idea/
 Would skip repository node_modules/node-red-dashboard
 public/
+settings.js

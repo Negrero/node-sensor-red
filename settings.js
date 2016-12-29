@@ -17,7 +17,8 @@
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
 //var fs = require("fs");
-var path_editor=__dirname+'/public'
+var path_editor=__dirname+'/public';
+
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
@@ -197,9 +198,9 @@ module.exports = {
     mongodbMultiproject:{
         port:27017,
         host:(process.NODE_ENV==="development")?"localhost":"localhost",
-        bd:"nodesensor",
-        user:"nodesensor",
-        password:"nodesensor"
+        bd:"glukose",
+        user:"glukose",
+        password:"glukose"
     },
 /*
     editorTheme: {
