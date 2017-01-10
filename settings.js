@@ -198,9 +198,9 @@ module.exports = {
     mongodbMultiproject:{
         port: 10708,
         host: "aws-us-east-1-portal.21.dblayer.com",
-        bd:"nodesensor",
-        user:"nodesensor",
-        password:"nodesensor"
+        bd:"rockrail",
+        user:"rockrail",
+        password:"rockrail"
     },
     editorTheme: {
         page: {
