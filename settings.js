@@ -17,7 +17,8 @@
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
 //var fs = require("fs");
-var path_editor=__dirname+'/public'
+var path_editor=__dirname+'/public';
+
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
@@ -240,13 +241,14 @@ module.exports = {
             }
         },
 
-        userMenu: true, // Hide the user-menu even if adminAuth is enabled
+        userMenu: false, // Hide the user-menu even if adminAuth is enabled
 
         login: {
             image: "/absolute/path/to/login/page/big/image" // a 256x256 image
         }
     }
     */
+
 
 
 }
