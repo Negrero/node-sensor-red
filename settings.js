@@ -201,7 +201,17 @@ module.exports = {
         user:"nodesensor",
         password:"nodesensor"
     },
-
+    editorTheme: {
+        page: {
+            title: "Ferrovial, S.A."
+        },
+        header: {
+            title: "Ferrovial, S.A."
+            //image: "/absolute/path/to/header/image", // or null to remove image
+            //url: "http://nodered.org" // optional url to make the header text/image a link to this url
+        }
+    }
+    /*
     editorTheme: {
         page: {
             title: "Thingtrack sl",
@@ -230,12 +240,13 @@ module.exports = {
             }
         },
 
-        userMenu: false, // Hide the user-menu even if adminAuth is enabled
+        userMenu: true, // Hide the user-menu even if adminAuth is enabled
 
         login: {
             image: "/absolute/path/to/login/page/big/image" // a 256x256 image
         }
     }
+    */
 
 
 }
