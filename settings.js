@@ -195,13 +195,7 @@ module.exports = {
     },
 
     storageModule:require('node-red-storage-multiproject'),
-    mongodbMultiproject:{
-        port: 10708,
-        host: "aws-us-east-1-portal.21.dblayer.com",
-        bd:"rockrail",
-        user:"rockrail",
-        password:"rockrail"
-    },
+    mongodbMultiproject:require('./datasources.js'),
     editorTheme: {
         page: {
             title: "Ferrovial, S.A."

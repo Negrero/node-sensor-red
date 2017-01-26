@@ -6,6 +6,7 @@ var when = require("when");
 var http = require("http");
 var users_authenticate={};
 var loopback=require('node-sensor-red-loopback');
+
 module.exports = {
     type: "credentials",
     users: function(username) {
