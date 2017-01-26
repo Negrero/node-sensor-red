@@ -3,9 +3,9 @@
  */
 
 module.exports={
-    port: 10708,
-    host: "aws-us-east-1-portal.21.dblayer.com",
-    bd:"rockrail",
-    user:"rockrail",
-    password:"rockrail"
+    port: 27017,
+    host: "localhost",
+    db:"nodesensor",
+    user:"nodesensor",
+    password:"nodesensor"
 }
